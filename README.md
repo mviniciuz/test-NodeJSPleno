@@ -26,13 +26,14 @@ Conta com api RESTfull desenvolvida em NodeJs para armazenamento das coordenadas
       'docker-compose up -d' para carregar os containers do 
       mongodb e da api.
 
-- 2 - Após acesse a rota post http://localhost:3333/storage-places 
-      Esta rota carrega as coordenadas para a base mongodb automaticamente.
+- 2 - Após acesse a rota get http://localhost:3333/storage-places 
+      para carrega as coordenadas para a base mongodb automaticamente.
 
-- 3 - A http://localhost:3333/places permite manipular as coordenadas.
+- 3 - A http://localhost:3333/places permite a manipulação das coordenadas.
       
-- 4 - Após executar o back-end, entre no diretório ./places-web
-      execute mpm ou yarn start para executar o Google maps.
+- 4 - Entre no diretório ./places-web
+      Informe sua API-KEY do Google maps no arquivo .env
+      execute mpm ou yarn start para executar front-end.
 
 - 5 - Obrigado pela oportunidade! 
 

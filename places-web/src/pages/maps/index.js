@@ -23,12 +23,12 @@ function Maps() {
 
   const options = {
     imagePath:
-      'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m', 
+      'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
   }
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyB5x50duuKk7RJ-eiUq05-BT9xuzUM_PAs"
+      googleMapsApiKey={process.env.API_KEY}
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
