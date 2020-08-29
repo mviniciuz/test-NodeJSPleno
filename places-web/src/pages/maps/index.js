@@ -1,21 +1,34 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GoogleMap, LoadScript, MarkerClusterer, Marker } from '@react-google-maps/api';
 
-import data from '../../data.js';
+import api from '../../services/api';
 
 const containerStyle = {
   width: '100%',
   height: '100vh'
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
-
 function Maps() {
+  const [locations, setLocations] = useState([]);
+  const [center, setCenter] = useState({});
 
-  const locations = data;
+
+  useEffect(() => {
+    async function loadData() {
+
+      const response = await api.get('/places');
+
+      console.log(response.data);
+
+      setCenter({
+        lat: response.data[0].lat,
+        lng: response.data[0].lng
+      });
+
+      setLocations(response.data);
+    }
+    loadData();
+  }, []);
 
   function createKey(location) {
     return location.lat + location.lng
